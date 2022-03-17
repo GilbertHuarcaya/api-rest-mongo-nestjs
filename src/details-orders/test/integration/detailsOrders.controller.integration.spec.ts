@@ -35,7 +35,9 @@ describe('DetailsOrdersController', () => {
 
   describe('getDetailsOrders', () => {
     it('should return an array of detailsOrders', async () => {
-      await dbConnection.collection('detailsOrders').insertOne(detailsOrderStub());
+      await dbConnection
+        .collection('detailsOrders')
+        .insertOne(detailsOrderStub());
       const response = await request(httpServer).get('/detailsOrders');
 
       expect(response.status).toBe(200);

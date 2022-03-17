@@ -11,7 +11,9 @@ export class DetailsOrdersResolver {
   constructor(private readonly detailsOrdersService: DetailsOrdersService) {}
 
   @Query(() => DetailsOrder, { name: 'detailsOrder', nullable: true })
-  async getDetailsOrder(@Args() getDetailsOrderArgs: GetDetailsOrderArgs): Promise<DetailsOrder> {
+  async getDetailsOrder(
+    @Args() getDetailsOrderArgs: GetDetailsOrderArgs,
+  ): Promise<DetailsOrder> {
     return this.detailsOrdersService.getDetailsOrder(getDetailsOrderArgs);
   }
 
@@ -22,14 +24,16 @@ export class DetailsOrdersResolver {
 
   @Mutation(() => DetailsOrder)
   async createDetailsOrder(
-    @Args('createDetailsOrderData') createDetailsOrderData: CreateDetailsOrderInput,
+    @Args('createDetailsOrderData')
+    createDetailsOrderData: CreateDetailsOrderInput,
   ): Promise<DetailsOrder> {
     return this.detailsOrdersService.createDetailsOrder(createDetailsOrderData);
   }
 
   @Mutation(() => DetailsOrder)
   async updateDetailsOrder(
-    @Args('updateDetailsOrderData') updateDetailsOrderData: UpdateDetailsOrderInput,
+    @Args('updateDetailsOrderData')
+    updateDetailsOrderData: UpdateDetailsOrderInput,
   ): Promise<DetailsOrder> {
     return this.detailsOrdersService.updateDetailsOrder(updateDetailsOrderData);
   }

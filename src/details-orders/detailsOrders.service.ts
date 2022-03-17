@@ -9,9 +9,13 @@ import { DetailsOrdersRepository } from './detailsOrders.repository';
 
 @Injectable()
 export class DetailsOrdersService {
-  constructor(private readonly detailsOrdersRepository: DetailsOrdersRepository) {}
+  constructor(
+    private readonly detailsOrdersRepository: DetailsOrdersRepository,
+  ) {}
 
-  async getDetailsOrder(getDetailsOrderArgs: GetDetailsOrderArgs): Promise<DetailsOrder> {
+  async getDetailsOrder(
+    getDetailsOrderArgs: GetDetailsOrderArgs,
+  ): Promise<DetailsOrder> {
     return this.detailsOrdersRepository.findOne(getDetailsOrderArgs);
   }
 
@@ -19,7 +23,9 @@ export class DetailsOrdersService {
     return this.detailsOrdersRepository.find({});
   }
 
-  async createDetailsOrder(createDetailsOrderData: CreateDetailsOrderInput): Promise<DetailsOrder> {
+  async createDetailsOrder(
+    createDetailsOrderData: CreateDetailsOrderInput,
+  ): Promise<DetailsOrder> {
     return this.detailsOrdersRepository.create({
       detailsOrderId: uuidv4(),
       email: createDetailsOrderData.email,
@@ -28,7 +34,9 @@ export class DetailsOrdersService {
     });
   }
 
-  async updateDetailsOrder(updateDetailsOrderData: UpdateDetailsOrderInput): Promise<DetailsOrder> {
+  async updateDetailsOrder(
+    updateDetailsOrderData: UpdateDetailsOrderInput,
+  ): Promise<DetailsOrder> {
     return this.detailsOrdersRepository.findOneAndUpdate(
       { detailsOrderId: updateDetailsOrderData.detailsOrderId },
       updateDetailsOrderData,
