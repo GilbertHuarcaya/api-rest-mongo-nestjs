@@ -9,10 +9,5 @@ export class UpdateStoreInput {
 
   @Field()
   @IsOptional()
-  @IsNotEmpty()
-  age?: number;
-
-  @Field({ nullable: true })
-  @IsOptional()
-  isSubscribed?: boolean;
+  openingHours?: string;
 }

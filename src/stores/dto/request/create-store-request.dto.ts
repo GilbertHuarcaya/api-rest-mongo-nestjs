@@ -1,4 +1,9 @@
 export class CreateStoreRequest {
-  email: string;
-  age: number;
+  name: string;
+
+  address: string;
+
+  city: string;
+
+  openingHours: string;
 }

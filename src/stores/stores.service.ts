@@ -22,9 +22,10 @@ export class StoresService {
   async createStore(createStoreData: CreateStoreInput): Promise<Store> {
     return this.storesRepository.create({
       storeId: uuidv4(),
-      email: createStoreData.email,
-      age: createStoreData.age,
-      favoriteFoods: [],
+      name: createStoreData.name,
+      address: createStoreData.address,
+      city: createStoreData.city,
+      openingHours: createStoreData.openingHours,
     });
   }
 

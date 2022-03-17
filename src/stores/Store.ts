@@ -13,15 +13,19 @@ export class Store {
 
   @Field()
   @Prop()
-  email?: string;
+  name?: string;
 
   @Field()
   @Prop()
-  age?: number;
+  address?: string;
 
-  @Field(() => [String])
-  @Prop([String])
-  favoriteFoods?: string[];
+  @Field()
+  @Prop()
+  city?: string;
+
+  @Field()
+  @Prop()
+  openingHours?: string;
 }
 
 export const StoreSchema = SchemaFactory.createForClass(Store);

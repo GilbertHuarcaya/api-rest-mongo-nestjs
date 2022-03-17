@@ -1,4 +1,3 @@
 export class UpdateStoreRequest {
-  favoriteFoods: string[];
-  age: number;
+  openingHours: string;
 }
