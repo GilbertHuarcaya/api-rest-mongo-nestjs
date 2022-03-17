@@ -27,6 +27,7 @@ export class ProductsService {
       description: createProductData.description,
       categoryId: createProductData.categoryId,
       stock: createProductData.stock,
+      status: 'Disponible',
       createdAt: new Date(),
     });
   }
