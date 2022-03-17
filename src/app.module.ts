@@ -1,3 +1,4 @@
+import { DetailsOrdersModule } from './details-orders/detailsOrders.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
@@ -16,6 +17,7 @@ import { OrdersModule } from './orders/orders.module';
     UsersModule,
     ProductsModule,
     OrdersModule,
+    DetailsOrdersModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
