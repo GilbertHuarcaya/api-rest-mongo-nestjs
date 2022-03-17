@@ -5,10 +5,13 @@ import { IsEmail, IsNotEmpty } from 'class-validator';
 export class CreateDetailsOrderInput {
   @Field()
   @IsNotEmpty()
-  @IsEmail()
-  email: string;
+  orderId: string;
 
   @Field()
   @IsNotEmpty()
-  age: number;
+  quantity: number;
+
+  @Field()
+  @IsNotEmpty()
+  productName: string;
 }

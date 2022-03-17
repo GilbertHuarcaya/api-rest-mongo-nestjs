@@ -28,9 +28,9 @@ export class DetailsOrdersService {
   ): Promise<DetailsOrder> {
     return this.detailsOrdersRepository.create({
       detailsOrderId: uuidv4(),
-      email: createDetailsOrderData.email,
-      age: createDetailsOrderData.age,
-      favoriteFoods: [],
+      orderId: createDetailsOrderData.orderId,
+      quantity: createDetailsOrderData.quantity,
+      productName: createDetailsOrderData.productName,
     });
   }
 

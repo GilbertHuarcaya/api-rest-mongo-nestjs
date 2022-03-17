@@ -13,15 +13,15 @@ export class DetailsOrder {
 
   @Field()
   @Prop()
-  email?: string;
+  orderId?: string;
 
   @Field()
   @Prop()
-  age?: number;
+  quantity?: number;
 
-  @Field(() => [String])
-  @Prop([String])
-  favoriteFoods?: string[];
+  @Field()
+  @Prop()
+  productName?: string;
 }
 
 export const DetailsOrderSchema = SchemaFactory.createForClass(DetailsOrder);

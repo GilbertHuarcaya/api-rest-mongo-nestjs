@@ -1,4 +1,7 @@
 export class CreateDetailsOrderRequest {
-  email: string;
-  age: number;
+  orderId: string;
+
+  quantity: number;
+
+  productName: string;
 }

@@ -8,11 +8,6 @@ export class UpdateDetailsOrderInput {
   detailsOrderId: string;
 
   @Field()
-  @IsOptional()
   @IsNotEmpty()
-  age?: number;
-
-  @Field({ nullable: true })
-  @IsOptional()
-  isSubscribed?: boolean;
+  quantity: number;
 }
