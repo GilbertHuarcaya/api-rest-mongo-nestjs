@@ -25,6 +25,10 @@ import { DetailsOrdersModule } from './details-orders/detailsOrders.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
+      cors: {
+        origin: '*',
+        credentials: true,
+      },
     }),
     DatabaseModule,
   ],
