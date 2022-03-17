@@ -1,14 +1,25 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { IsEmail, IsNotEmpty } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 
 @InputType()
 export class CreateProductInput {
   @Field()
   @IsNotEmpty()
-  @IsEmail()
-  email: string;
+  name: string;
 
   @Field()
   @IsNotEmpty()
-  age: number;
+  price: number;
+
+  @Field()
+  @IsNotEmpty()
+  description: string;
+
+  @Field()
+  @IsNotEmpty()
+  categoryId: string;
+
+  @Field()
+  @IsNotEmpty()
+  stock: number;
 }

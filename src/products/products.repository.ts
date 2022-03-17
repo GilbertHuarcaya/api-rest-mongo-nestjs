@@ -6,13 +6,19 @@ import { Product, ProductDocument } from './Product';
 
 @Injectable()
 export class ProductsRepository {
-  constructor(@InjectModel(Product.name) private productModel: Model<ProductDocument>) {}
+  constructor(
+    @InjectModel(Product.name) private productModel: Model<ProductDocument>,
+  ) {}
 
-  async findOne(productFilterQuery: DocumentDefinition<Product>): Promise<Product> {
+  async findOne(
+    productFilterQuery: DocumentDefinition<Product>,
+  ): Promise<Product> {
     return this.productModel.findOne(productFilterQuery);
   }
 
-  async find(productsFilterQuery: DocumentDefinition<Product>): Promise<Product[]> {
+  async find(
+    productsFilterQuery: DocumentDefinition<Product>,
+  ): Promise<Product[]> {
     return this.productModel.find(productsFilterQuery);
   }
 

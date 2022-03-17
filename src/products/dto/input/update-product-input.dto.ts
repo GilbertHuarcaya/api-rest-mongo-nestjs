@@ -10,9 +10,10 @@ export class UpdateProductInput {
   @Field()
   @IsOptional()
   @IsNotEmpty()
-  age?: number;
+  stock?: number;
 
-  @Field({ nullable: true })
+  @Field()
   @IsOptional()
-  isSubscribed?: boolean;
+  @IsNotEmpty()
+  status?: string;
 }

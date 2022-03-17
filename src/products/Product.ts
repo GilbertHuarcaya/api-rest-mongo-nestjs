@@ -13,15 +13,31 @@ export class Product {
 
   @Field()
   @Prop()
-  email?: string;
+  name?: string;
 
   @Field()
   @Prop()
-  age?: number;
+  price?: number;
 
-  @Field(() => [String])
-  @Prop([String])
-  favoriteFoods?: string[];
+  @Field()
+  @Prop()
+  description?: string;
+
+  @Field()
+  @Prop()
+  categoryId?: string;
+
+  @Field()
+  @Prop()
+  stock?: number;
+
+  @Field()
+  @Prop()
+  status?: string;
+
+  @Field()
+  @Prop()
+  createdAt?: Date;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);

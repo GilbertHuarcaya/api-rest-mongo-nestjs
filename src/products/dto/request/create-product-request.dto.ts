@@ -1,4 +1,11 @@
 export class CreateProductRequest {
-  email: string;
-  age: number;
+  name: string;
+
+  price: number;
+
+  description: string;
+
+  categoryId: string;
+
+  stock: number;
 }

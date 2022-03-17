@@ -22,9 +22,12 @@ export class ProductsService {
   async createProduct(createProductData: CreateProductInput): Promise<Product> {
     return this.productsRepository.create({
       productId: uuidv4(),
-      email: createProductData.email,
-      age: createProductData.age,
-      favoriteFoods: [],
+      name: createProductData.name,
+      price: createProductData.price,
+      description: createProductData.description,
+      categoryId: createProductData.categoryId,
+      stock: createProductData.stock,
+      createdAt: new Date(),
     });
   }
 
