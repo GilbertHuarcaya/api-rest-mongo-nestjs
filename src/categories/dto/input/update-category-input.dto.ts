@@ -10,9 +10,5 @@ export class UpdateCategoryInput {
   @Field()
   @IsOptional()
   @IsNotEmpty()
-  age?: number;
-
-  @Field({ nullable: true })
-  @IsOptional()
-  isSubscribed?: boolean;
+  name?: string;
 }

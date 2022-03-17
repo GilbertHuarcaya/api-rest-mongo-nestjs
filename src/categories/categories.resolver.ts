@@ -11,7 +11,9 @@ export class CategoriesResolver {
   constructor(private readonly categoriesService: CategoriesService) {}
 
   @Query(() => Category, { name: 'category', nullable: true })
-  async getCategory(@Args() getCategoryArgs: GetCategoryArgs): Promise<Category> {
+  async getCategory(
+    @Args() getCategoryArgs: GetCategoryArgs,
+  ): Promise<Category> {
     return this.categoriesService.getCategory(getCategoryArgs);
   }
 

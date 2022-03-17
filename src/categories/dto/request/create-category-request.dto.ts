@@ -1,4 +1,3 @@
 export class CreateCategoryRequest {
-  email: string;
-  age: number;
+  name: string;
 }

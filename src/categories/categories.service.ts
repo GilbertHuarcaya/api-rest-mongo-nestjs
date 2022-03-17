@@ -24,9 +24,7 @@ export class CategoriesService {
   ): Promise<Category> {
     return this.categoriesRepository.create({
       categoryId: uuidv4(),
-      email: createCategoryData.email,
-      age: createCategoryData.age,
-      favoriteFoods: [],
+      name: createCategoryData.name,
     });
   }
 

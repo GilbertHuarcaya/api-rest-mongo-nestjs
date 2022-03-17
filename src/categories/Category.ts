@@ -13,15 +13,7 @@ export class Category {
 
   @Field()
   @Prop()
-  email?: string;
-
-  @Field()
-  @Prop()
-  age?: number;
-
-  @Field(() => [String])
-  @Prop([String])
-  favoriteFoods?: string[];
+  name?: string;
 }
 
 export const Categorieschema = SchemaFactory.createForClass(Category);
