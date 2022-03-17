@@ -5,6 +5,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
+import { ProductsModule } from './products/products.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
@@ -12,6 +14,8 @@ import { UsersModule } from './users/users.module';
       isGlobal: true,
     }),
     UsersModule,
+    ProductsModule,
+    OrdersModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
