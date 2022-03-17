@@ -22,9 +22,11 @@ export class OrdersService {
   async createOrder(createOrderData: CreateOrderInput): Promise<Order> {
     return this.ordersRepository.create({
       orderId: uuidv4(),
-      email: createOrderData.email,
-      age: createOrderData.age,
-      favoriteFoods: [],
+      name: createOrderData.name,
+      date: new Date(),
+      shippingAddress: createOrderData.shippingAddress,
+      city: createOrderData.city,
+      pickup: createOrderData.pickup,
     });
   }
 

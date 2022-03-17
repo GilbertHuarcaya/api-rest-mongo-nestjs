@@ -1,4 +1,9 @@
 export class CreateOrderRequest {
-  email: string;
-  age: number;
+  name: string;
+
+  shippingAddress: string;
+
+  city: string;
+
+  pickup: boolean;
 }

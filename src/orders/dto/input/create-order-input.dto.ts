@@ -1,14 +1,21 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { IsEmail, IsNotEmpty } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 
 @InputType()
 export class CreateOrderInput {
   @Field()
   @IsNotEmpty()
-  @IsEmail()
-  email: string;
+  name: string;
 
   @Field()
   @IsNotEmpty()
-  age: number;
+  shippingAddress: string;
+
+  @Field()
+  @IsNotEmpty()
+  city: string;
+
+  @Field()
+  @IsNotEmpty()
+  pickup: boolean;
 }

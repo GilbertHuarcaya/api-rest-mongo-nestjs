@@ -9,10 +9,5 @@ export class UpdateOrderInput {
 
   @Field()
   @IsOptional()
-  @IsNotEmpty()
-  age?: number;
-
-  @Field({ nullable: true })
-  @IsOptional()
-  isSubscribed?: boolean;
+  pickup: boolean;
 }
