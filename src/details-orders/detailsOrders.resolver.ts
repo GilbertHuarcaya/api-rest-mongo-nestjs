@@ -8,29 +8,29 @@ import { DetailsOrdersService } from './detailsOrders.service';
 
 @Resolver(() => DetailsOrder)
 export class DetailsOrdersResolver {
-  constructor(private readonly detailsordersService: DetailsOrdersService) {}
+  constructor(private readonly detailsOrdersService: DetailsOrdersService) {}
 
-  @Query(() => DetailsOrder, { name: 'detailsorder', nullable: true })
+  @Query(() => DetailsOrder, { name: 'detailsOrder', nullable: true })
   async getDetailsOrder(@Args() getDetailsOrderArgs: GetDetailsOrderArgs): Promise<DetailsOrder> {
-    return this.detailsordersService.getDetailsOrder(getDetailsOrderArgs);
+    return this.detailsOrdersService.getDetailsOrder(getDetailsOrderArgs);
   }
 
-  @Query(() => [DetailsOrder], { name: 'detailsorders', nullable: 'items' })
+  @Query(() => [DetailsOrder], { name: 'detailsOrders', nullable: 'items' })
   async getDetailsOrders(): Promise<DetailsOrder[]> {
-    return this.detailsordersService.getDetailsOrders();
+    return this.detailsOrdersService.getDetailsOrders();
   }
 
   @Mutation(() => DetailsOrder)
   async createDetailsOrder(
     @Args('createDetailsOrderData') createDetailsOrderData: CreateDetailsOrderInput,
   ): Promise<DetailsOrder> {
-    return this.detailsordersService.createDetailsOrder(createDetailsOrderData);
+    return this.detailsOrdersService.createDetailsOrder(createDetailsOrderData);
   }
 
   @Mutation(() => DetailsOrder)
   async updateDetailsOrder(
     @Args('updateDetailsOrderData') updateDetailsOrderData: UpdateDetailsOrderInput,
   ): Promise<DetailsOrder> {
-    return this.detailsordersService.updateDetailsOrder(updateDetailsOrderData);
+    return this.detailsOrdersService.updateDetailsOrder(updateDetailsOrderData);
   }
 }

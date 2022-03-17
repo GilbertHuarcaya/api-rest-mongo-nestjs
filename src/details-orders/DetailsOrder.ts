@@ -9,7 +9,7 @@ export type DetailsOrderDocument = DetailsOrder & Document;
 export class DetailsOrder {
   @Field()
   @Prop()
-  detailsorderId?: string;
+  detailsOrderId?: string;
 
   @Field()
   @Prop()

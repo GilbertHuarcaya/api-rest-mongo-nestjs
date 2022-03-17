@@ -8,33 +8,33 @@ import { DetailsOrder, DetailsOrderDocument } from './DetailsOrder';
 export class DetailsOrdersRepository {
   constructor(
     @InjectModel(DetailsOrder.name)
-    private detailsorderModel: Model<DetailsOrderDocument>,
+    private detailsOrderModel: Model<DetailsOrderDocument>,
   ) {}
 
   async findOne(
-    detailsorderFilterQuery: DocumentDefinition<DetailsOrder>,
+    detailsOrderFilterQuery: DocumentDefinition<DetailsOrder>,
   ): Promise<DetailsOrder> {
-    return this.detailsorderModel.findOne(detailsorderFilterQuery);
+    return this.detailsOrderModel.findOne(detailsOrderFilterQuery);
   }
 
   async find(
-    detailsordersFilterQuery: DocumentDefinition<DetailsOrder>,
+    detailsOrdersFilterQuery: DocumentDefinition<DetailsOrder>,
   ): Promise<DetailsOrder[]> {
-    return this.detailsorderModel.find(detailsordersFilterQuery);
+    return this.detailsOrderModel.find(detailsOrdersFilterQuery);
   }
 
-  async create(detailsorder: DetailsOrder): Promise<DetailsOrder> {
-    const newDetailsOrder = new this.detailsorderModel(detailsorder);
+  async create(detailsOrder: DetailsOrder): Promise<DetailsOrder> {
+    const newDetailsOrder = new this.detailsOrderModel(detailsOrder);
     return newDetailsOrder.save();
   }
 
   async findOneAndUpdate(
-    detailsorderFilterQuery: DocumentDefinition<DetailsOrder>,
-    detailsorder: Partial<DetailsOrder>,
+    detailsOrderFilterQuery: DocumentDefinition<DetailsOrder>,
+    detailsOrder: Partial<DetailsOrder>,
   ): Promise<DetailsOrder> {
-    return this.detailsorderModel.findOneAndUpdate(
-      detailsorderFilterQuery,
-      detailsorder,
+    return this.detailsOrderModel.findOneAndUpdate(
+      detailsOrderFilterQuery,
+      detailsOrder,
       {
         new: true,
       },

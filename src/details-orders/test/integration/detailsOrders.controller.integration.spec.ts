@@ -5,7 +5,7 @@ import * as request from 'supertest';
 import { AppModule } from '../../../app.module';
 import { DatabaseService } from '../../../database/database.service';
 import { CreateDetailsOrderRequest } from '../../dto/request/create-detailsOrder-request.dto';
-import { detailsorderStub } from '../stubs/detailsOrder.stub';
+import { detailsOrderStub } from '../stubs/detailsOrder.stub';
 
 describe('DetailsOrdersController', () => {
   let dbConnection: Connection;
@@ -30,36 +30,36 @@ describe('DetailsOrdersController', () => {
   });
 
   beforeEach(async () => {
-    await dbConnection.collection('detailsorders').deleteMany({});
+    await dbConnection.collection('detailsOrders').deleteMany({});
   });
 
   describe('getDetailsOrders', () => {
-    it('should return an array of detailsorders', async () => {
-      await dbConnection.collection('detailsorders').insertOne(detailsorderStub());
-      const response = await request(httpServer).get('/detailsorders');
+    it('should return an array of detailsOrders', async () => {
+      await dbConnection.collection('detailsOrders').insertOne(detailsOrderStub());
+      const response = await request(httpServer).get('/detailsOrders');
 
       expect(response.status).toBe(200);
-      expect(response.body).toMatchObject([detailsorderStub()]);
+      expect(response.body).toMatchObject([detailsOrderStub()]);
     });
   });
 
   describe('createDetailsOrder', () => {
-    it('should create a detailsorder', async () => {
+    it('should create a detailsOrder', async () => {
       const createDetailsOrderRequest: CreateDetailsOrderRequest = {
-        email: detailsorderStub().email,
-        age: detailsorderStub().age,
+        email: detailsOrderStub().email,
+        age: detailsOrderStub().age,
       };
       const response = await request(httpServer)
-        .post('/detailsorders')
+        .post('/detailsOrders')
         .send(createDetailsOrderRequest);
 
       expect(response.status).toBe(201);
       expect(response.body).toMatchObject(createDetailsOrderRequest);
 
-      const detailsorder = await dbConnection
-        .collection('detailsorders')
+      const detailsOrder = await dbConnection
+        .collection('detailsOrders')
         .findOne({ email: createDetailsOrderRequest.email });
-      expect(detailsorder).toMatchObject(createDetailsOrderRequest);
+      expect(detailsOrder).toMatchObject(createDetailsOrderRequest);
     });
   });
 });

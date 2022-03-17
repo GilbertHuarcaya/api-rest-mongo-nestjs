@@ -1,6 +1,6 @@
 import { DetailsOrder } from '../../DetailsOrder';
 
-export const detailsorderStub = (): DetailsOrder => {
+export const detailsOrderStub = (): DetailsOrder => {
   return {
     email: 'test@example.com',
     age: 23,

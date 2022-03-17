@@ -5,7 +5,7 @@ import { IsNotEmpty, IsOptional } from 'class-validator';
 export class UpdateDetailsOrderInput {
   @Field()
   @IsNotEmpty()
-  detailsorderId: string;
+  detailsOrderId: string;
 
   @Field()
   @IsOptional()

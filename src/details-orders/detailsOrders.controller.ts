@@ -6,38 +6,38 @@ import { UpdateDetailsOrderRequest } from './dto/request/update-detailsOrder-req
 import { DetailsOrder } from './DetailsOrder';
 import { DetailsOrdersService } from './detailsOrders.service';
 
-@Controller('detailsorders')
+@Controller('detailsOrders')
 export class DetailsOrdersController {
-  constructor(private readonly detailsordersService: DetailsOrdersService) {}
+  constructor(private readonly detailsOrdersService: DetailsOrdersService) {}
 
-  @Get(':detailsorderId')
+  @Get(':detailsOrderId')
   async getDetailsOrder(
-    @Param('detailsorderId') detailsorderId: string,
+    @Param('detailsOrderId') detailsOrderId: string,
   ): Promise<DetailsOrder> {
-    return this.detailsordersService.getDetailsOrder({ detailsorderId });
+    return this.detailsOrdersService.getDetailsOrder({ detailsOrderId });
   }
 
   @Get()
   async getDetailsOrders(): Promise<DetailsOrder[]> {
-    return this.detailsordersService.getDetailsOrders();
+    return this.detailsOrdersService.getDetailsOrders();
   }
 
   @Post()
   async createDetailsOrder(
     @Body() createDetailsOrderRequest: CreateDetailsOrderRequest,
   ): Promise<DetailsOrder> {
-    return this.detailsordersService.createDetailsOrder(
+    return this.detailsOrdersService.createDetailsOrder(
       createDetailsOrderRequest,
     );
   }
 
-  @Patch(':detailsorderId')
+  @Patch(':detailsOrderId')
   async updateDetailsOrder(
-    @Param('detailsorderId') detailsorderId: string,
+    @Param('detailsOrderId') detailsOrderId: string,
     @Body() updateDetailsOrderRequest: UpdateDetailsOrderRequest,
   ): Promise<DetailsOrder> {
-    return this.detailsordersService.updateDetailsOrder({
-      detailsorderId,
+    return this.detailsOrdersService.updateDetailsOrder({
+      detailsOrderId,
       ...updateDetailsOrderRequest,
     });
   }
