@@ -1,3 +1,4 @@
+import { DeleteProductInput } from './dto/input/delete-product-input.dto';
 import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
 import { GetProductArgs } from './dto/args/get-product-args.dto';
 import { CreateProductInput } from './dto/input/create-product-input.dto';
@@ -32,5 +33,12 @@ export class ProductsResolver {
     @Args('updateProductData') updateProductData: UpdateProductInput,
   ): Promise<Product> {
     return this.productsService.updateProduct(updateProductData);
+  }
+
+  @Mutation(() => Product)
+  async deleteProduct(
+    @Args('deleteProductArgs') deleteProductArgs: DeleteProductInput,
+  ): Promise<Product> {
+    return this.productsService.deleteProduct(deleteProductArgs);
   }
 }

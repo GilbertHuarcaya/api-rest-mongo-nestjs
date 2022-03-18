@@ -35,4 +35,10 @@ export class ProductsRepository {
       new: true,
     });
   }
+
+  async findOneAndDelete(
+    productFilterQuery: DocumentDefinition<Product>,
+  ): Promise<Product> {
+    return this.productModel.findOneAndDelete(productFilterQuery);
+  }
 }

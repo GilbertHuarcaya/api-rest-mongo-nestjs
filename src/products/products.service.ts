@@ -1,3 +1,4 @@
+import { DeleteProductInput } from './dto/input/delete-product-input.dto';
 import { Injectable } from '@nestjs/common';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -37,5 +38,9 @@ export class ProductsService {
       { productId: updateProductData.productId },
       updateProductData,
     );
+  }
+
+  async deleteProduct(deleteProductArgs: DeleteProductInput): Promise<Product> {
+    return this.productsRepository.findOneAndDelete(deleteProductArgs);
   }
 }
